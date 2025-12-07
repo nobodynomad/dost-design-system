@@ -9,7 +9,7 @@
 /* 1.1 WRAPPER
 /––––––––––––––––––––––––------------ */
 .textarea {
-	padding: get-token("space", 8);
+	padding: get-token("space", 100);
 	cursor: text;
 	background-color: get-token("color", "background", "neutral", 1, "rest");
 	border: get-token("border-width", "default") solid get-token("color", "border", "neutral", 2);

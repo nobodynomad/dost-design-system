@@ -25,12 +25,12 @@ Table of Contents
 	--tag-border-color: #{get-token("color", "border", "neutral", 2)};
 
 	display: flex;
-	gap: get-token("space", 4);
+	gap: get-token("space", 050);
 	align-items: center;
 	justify-content: center;
 	inline-size: var(--tag-inline-size);
 	block-size: var(--tag-block-size);
-	padding-inline: get-token("space", 8);
+	padding-inline: get-token("space", 100);
 	font-size: get-token("font-size", "sm");
 	font-weight: get-token("font-weight", "normal");
 	line-height: get-token("leading", "none");

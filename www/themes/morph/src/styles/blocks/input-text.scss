@@ -12,7 +12,7 @@
 	display: inline-flex;
 	align-items: stretch;
 	block-size: get-token("control-size", "md");
-	padding-inline: get-token("space", 8);
+	padding-inline: get-token("space", 100);
 	cursor: text;
 	background-color: get-token("color", "background", "neutral", 1, "rest");
 	border: get-token("border-width", "default") solid get-token("color", "border", "neutral", 2);
@@ -20,7 +20,7 @@
 
 	// Adjust horizontal padding based on trailing action
 	&:has(.input-text__action) {
-		padding-inline-end: get-token("space", 4);
+		padding-inline-end: get-token("space", 050);
 	}
 
 	// Focus state
@@ -36,11 +36,11 @@
 
 	// Adjust horizontal padding based on icon position
 	&:has(.input-text__icon:first-child) {
-		padding-inline-end: 0;
+		padding-inline-end: get-token("space", 0);
 	}
 
 	&:has(.input-text__icon:last-child) {
-		padding-inline-start: 0;
+		padding-inline-start: get-token("space", 0);
 	}
 }
 
@@ -65,15 +65,15 @@
 
 	// Adjust horizontal padding based on icon/action position
 	.input-text:has(.input-text__action) & {
-		padding-inline-end: get-token("space", 4);
+		padding-inline-end: get-token("space", 050);
 	}
 
 	.input-text:has(.input-text__icon:first-child) & {
-		padding-inline-end: get-token("space", 8);
+		padding-inline-end: get-token("space", 100);
 	}
 
 	.input-text:has(.input-text__icon:last-child) & {
-		padding-inline-start: get-token("space", 8);
+		padding-inline-start: get-token("space", 100);
 	}
 }
 
@@ -85,7 +85,7 @@
 
 	flex-shrink: 0;
 	align-self: center;
-	margin-inline-end: get-token("space", 8);
+	margin-inline-end: get-token("space", 100);
 	pointer-events: none;
 }
 
@@ -96,7 +96,7 @@
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: center;
-	padding-inline: get-token("space", 4);
+	padding-inline: get-token("space", 050);
 	color: get-token("color", "foreground", "neutral", 3);
 	cursor: pointer;
 	background-color: none;

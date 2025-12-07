@@ -1,8 +1,8 @@
 @use "../abstracts/functions/get-token" as *;
 
 .grid {
-	--grid-row-gap: #{get-token("space", 16)};
-	--grid-col-gap: #{get-token("space", 16)};
+	--grid-row-gap: #{get-token("space", 200)};
+	--grid-col-gap: #{get-token("space", 200)};
 	--grid-gap: var(--grid-row-gap) var(--grid-col-gap);
 
 	display: grid;

@@ -1,7 +1,7 @@
 @use "../abstracts/functions/get-token" as *;
 
 .stack {
-	--stack-space: #{get-token("space", 16)};
+	--stack-space: #{get-token("space", 200)};
 
 	display: flex;
 	flex-direction: column;

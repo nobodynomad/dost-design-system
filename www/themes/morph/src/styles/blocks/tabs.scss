@@ -36,12 +36,12 @@ Table of Contents
 
 	position: relative;
 	display: flex;
-	gap: get-token("space", 8);
+	gap: get-token("space", 100);
 	align-items: center;
 	justify-content: center;
 	inline-size: var(--tabs-trigger-inline-size);
 	block-size: var(--tabs-trigger-block-size);
-	padding-inline: get-token("space", 16);
+	padding-inline: get-token("space", 200);
 	font-size: get-token("font-size", "md");
 	font-weight: get-token("font-weight", "normal");
 	line-height: get-token("leading", "none");
@@ -105,7 +105,7 @@ Table of Contents
 /––––––––––––––––––––––––------------ */
 .tabs__panels {
 	min-block-size: 8rem;
-	padding-block-start: get-token("space", 16);
+	padding-block-start: get-token("space", 200);
 }
 
 /* 1.7 TABS PANEL

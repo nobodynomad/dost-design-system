@@ -2,5 +2,5 @@
 @use "../abstracts/mixins/breakpoint" as *;
 
 .region {
-	padding-block: get-token("space", 64);
+	padding-block: get-token("space", 800);
 }

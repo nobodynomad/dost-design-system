@@ -11,7 +11,7 @@
 .select {
 	position: relative;
 	display: inline-flex;
-	gap: get-token("space", 8);
+	gap: get-token("space", 100);
 	align-items: stretch;
 	block-size: get-token("control-size", "md");
 	cursor: pointer;
@@ -30,7 +30,7 @@
 .select__icon {
 	position: absolute;
 	inset-block-start: 50%;
-	inset-inline-end: get-token("space", 8);
+	inset-inline-end: get-token("space", 100);
 	color: get-token("color", "foreground", "neutral", 3);
 	pointer-events: none;
 	transform: translateY(-50%);
@@ -40,8 +40,8 @@
 /––––––––––––––––––––––––------------ */
 .select__input {
 	inline-size: 100%;
-	padding-inline-start: get-token("space", 8);
-	padding-inline-end: calc(get-token("icon-size", "md") + get-token("space", 16));
+	padding-inline-start: get-token("space", 100);
+	padding-inline-end: calc(get-token("icon-size", "md") + get-token("space", 200));
 	line-height: get-token("leading", "none");
 	appearance: none;
 	cursor: pointer;
