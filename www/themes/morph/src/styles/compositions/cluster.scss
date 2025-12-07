@@ -1,7 +1,7 @@
 @use "../abstracts/functions/get-token" as *;
 
 .cluster {
-	--cluster-gap: #{get-token("space", 16)};
+	--cluster-gap: #{get-token("space", 200)};
 
 	display: flex;
 	flex-direction: row;

@@ -27,8 +27,8 @@ th {
 
 th,
 td {
-	padding-block: get-token("space", 8);
-	padding-inline: get-token("space", 16);
+	padding-block: get-token("space", 100);
+	padding-inline: get-token("space", 200);
 	text-align: start;
 	border-block-end: get-token("border-width", "default") solid
 		get-token("color", "border", "neutral", 2);

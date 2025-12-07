@@ -30,65 +30,52 @@ Table of Contents
 ====================================================== */
 
 /* ======================================================
-  1.0 BASE SIZE SCALE
+  1.0 ELEMENT DIMENSIONS
 ====================================================== */
-/// Base size scale with numeric keys
-///
-/// These values form the foundation for all sizing tokens in the design system.
-/// The scale is used for:
-/// - Spacing (padding, margin, gap)
-/// - Element dimensions (width, height)
-/// - Positioning offsets (top, left, inset)
-/// - Border widths and radii
-$base-sizes: (
-	1: 0.0625rem,
-	2: 0.125rem,
-	4: 0.25rem,
-	6: 0.375rem,
-	8: 0.5rem,
-	12: 0.75rem,
-	14: 0.875rem,
-	16: 1rem,
-	18: 1.125rem,
-	20: 1.25rem,
-	24: 1.5rem,
-	32: 2rem,
-	40: 2.5rem,
-	44: 2.75rem,
-	48: 3rem,
-	56: 3.5rem,
-	64: 4rem,
-	80: 5rem,
-	96: 6rem,
-	128: 8rem,
-	160: 10rem,
+
+/* 1.1 SPACING
+/––––––––––––––––––––––––------------ */
+$spacing: (
+	0: 0,
+	025: 0.125rem,
+	050: 0.25rem,
+	075: 0.375rem,
+	100: 0.5rem,
+	150: 0.75rem,
+	200: 1rem,
+	250: 1.25rem,
+	300: 1.5rem,
+	400: 2rem,
+	500: 2.5rem,
+	600: 3rem,
+	700: 3.5rem,
+	800: 4rem,
+	1000: 5rem,
+	1200: 6rem,
+	1600: 8rem,
+	2000: 10rem,
 );
 
-/* ======================================================
-  2.0 ELEMENT DIMENSIONS
-====================================================== */
-
-/* 2.1 CONTROL SIZES
+/* 1.2 CONTROL SIZES
 /––––––––––––––––––––––––------------ */
 /// Height values for form controls and interactive elements
 $control-sizes: (
-	"xs": map.get($base-sizes, 24),
-	"sm": map.get($base-sizes, 32),
-	"md": map.get($base-sizes, 40),
-	"lg": map.get($base-sizes, 48),
+	"xs": 1.5rem,
+	"sm": 2rem,
+	"md": 2.75rem,
+	"lg": 3rem,
 );
 
-/* 2.2 ICON SIZES
+/* 1.3 ICON SIZES
 /––––––––––––––––––––––––------------ */
-/// Icon size values (em-based for relative sizing)
 $icon-sizes: (
-	"xs": map.get($base-sizes, 12),
-	"sm": map.get($base-sizes, 16),
-	"md": map.get($base-sizes, 20),
-	"lg": map.get($base-sizes, 24),
+	"xs": 0.75rem,
+	"sm": 1rem,
+	"md": 1.25rem,
+	"lg": 1.5rem,
 );
 
-/* 2.3 MAX WIDTHS
+/* 1.4 MAX WIDTHS
 /––––––––––––––––––––––––------------ */
 /// Maximum width constraints for content and containers
 $max-widths: (
@@ -107,9 +94,8 @@ $max-widths: (
 	"3xl": 56rem
 );
 
-/* 2.4 ASPECT RATIO
+/* 1.5 ASPECT RATIO
 /––––––––––––––––––––––––------------ */
-/// Aspect ratio values for maintaining proportions
 $aspect-ratio: (
 	"square": "1 / 1",
 	"landscape": "16 / 9",
@@ -120,49 +106,47 @@ $aspect-ratio: (
 );
 
 /* ======================================================
-  3.0 DECORATIVE PROPERTIES
+  2.0 DECORATIVE PROPERTIES
 ====================================================== */
 
-/* 3.1 BORDER WIDTH
+/* 2.1 BORDER WIDTH
 /––––––––––––––––––––––––------------ */
-/// Border and outline thickness values
 $border-widths: (
 	"none": 0,
-	"default": map.get($base-sizes, 1),
-	"sm": map.get($base-sizes, 1),
-	"md": map.get($base-sizes, 2),
-	"lg": map.get($base-sizes, 4),
+	"sm": 0.0625rem,
+	"md": 0.125rem,
+	"lg": 0.25rem,
+	"default": 0.0625rem,
 );
 
-/* 3.2 BORDER RADIUS
+/* 2.2 BORDER RADIUS
 /––––––––––––––––––––––––------------ */
 /// Corner radius values
 $border-radius: (
 	"none": 0,
-	"xs": map.get($base-sizes, 2),
-	"sm": map.get($base-sizes, 4),
-	"md": map.get($base-sizes, 8),
-	"lg": map.get($base-sizes, 12),
-	"xl": map.get($base-sizes, 16),
+	"xs": 0.125rem,
+	"sm": 0.25rem,
+	"md": 0.5rem,
+	"lg": 0.75rem,
+	"xl": 1rem,
 	"circle": 624.9375rem,
 );
 
-/* 3.3 OUTLINE
+/* 2.3 OUTLINE
 /––––––––––––––––––––––––------------ */
 /// Outline offset and width
 $outline: (
-	"offset": calc(map.get($base-sizes, 2) * -1),
-	"width": map.get($base-sizes, 2),
+	"offset": calc(0.125rem * -1),
+	"width": 0.125rem,
 	"shadow": inset 0 0 0 0.1875rem,
 );
 
 /* ======================================================
-  4.0 RESPONSIVE
+  3.0 RESPONSIVE
 ====================================================== */
 
-/* 4.1 BREAKPOINTS
+/* 3.1 BREAKPOINTS
 /––––––––––––––––––––––––------------ */
-/// Responsive breakpoint values
 $breakpoints: (
 	"xs": 36rem,
 	"sm": 48rem,

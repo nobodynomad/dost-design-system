@@ -24,10 +24,10 @@
 /––––––––––––––––––––––––------------ */
 .accordion__item-trigger {
 	display: flex;
-	gap: get-token("space", 16);
+	gap: get-token("space", 200);
 	justify-content: space-between;
 	inline-size: 100%;
-	padding-block: get-token("space", 16);
+	padding-block: get-token("space", 200);
 	font-size: get-token("font-size", "md");
 	font-weight: get-token("font-weight", "medium");
 	line-height: get-token("leading", "sm");
@@ -54,7 +54,7 @@
 /––––––––––––––––––––––––------------ */
 .accordion__item-content {
 	padding-block-start: 0;
-	padding-block-end: get-token("space", 16);
+	padding-block-end: get-token("space", 200);
 	overflow: hidden;
 	animation: accordion-slide-down get-token("animation-duration", 200)
 		get-token("animation-easing", "prod-standard");

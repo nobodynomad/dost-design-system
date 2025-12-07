@@ -14,7 +14,7 @@ a:not([class]),
 
 	&:has(.link__icon) {
 		display: inline-flex;
-		gap: get-token("space", 4);
+		gap: get-token("space", 050);
 		align-items: center;
 	}
 

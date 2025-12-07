@@ -5,7 +5,7 @@
 	z-index: get-token("z-index", "global", "instant-interaction");
 	visibility: hidden;
 	max-inline-size: 16rem;
-	padding: get-token("space", 8);
+	padding: get-token("space", 100);
 	background-color: get-token("color", "background", "neutral", 1, "rest");
 	border-radius: get-token("border-radius", "sm");
 	box-shadow: #{get-token("shadow", "md")};

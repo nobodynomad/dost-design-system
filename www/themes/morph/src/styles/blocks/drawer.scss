@@ -53,7 +53,7 @@ Table of Contents
 	z-index: get-token("z-index", "local", "base");
 	inline-size: 100%;
 	max-inline-size: 85vw;
-	padding: get-token("space", 16);
+	padding: get-token("space", 200);
 	overflow-y: auto;
 	background-color: get-token("color", "background", "neutral", 1, "rest");
 	box-shadow: get-token("shadow", "xl");
@@ -75,6 +75,6 @@ Table of Contents
 /––––––––––––––––––––––––------------ */
 .drawer__close {
 	position: absolute;
-	inset-block-start: get-token("space", 8);
-	inset-inline-end: get-token("space", 8);
+	inset-block-start: get-token("space", 100);
+	inset-inline-end: get-token("space", 100);
 }

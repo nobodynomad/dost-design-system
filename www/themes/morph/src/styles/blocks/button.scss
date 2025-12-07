@@ -25,12 +25,12 @@ Table of Contents
 	--btn-border-color: #{get-token("color", "border", "neutral", 2)};
 
 	display: flex;
-	gap: get-token("space", 8);
+	gap: get-token("space", 100);
 	align-items: center;
 	justify-content: center;
 	inline-size: var(--btn-inline-size);
 	block-size: var(--btn-block-size);
-	padding-inline: get-token("space", 32);
+	padding-inline: get-token("space", 400);
 	font-size: get-token("font-size", "md");
 	font-weight: get-token("font-weight", "medium");
 	line-height: get-token("leading", "none");
@@ -68,13 +68,13 @@ Table of Contents
 	// Adjust horizontal padding based on icon position
 	// exclude .btn--icon
 	&:not(.btn--icon):has(.btn__icon:first-child) {
-		padding-inline-start: get-token("space", 24);
-		padding-inline-end: get-token("space", 32);
+		padding-inline-start: get-token("space", 300);
+		padding-inline-end: get-token("space", 400);
 	}
 
 	&:not(.btn--icon):has(.btn__icon:last-child) {
-		padding-inline-start: get-token("space", 32);
-		padding-inline-end: get-token("space", 24);
+		padding-inline-start: get-token("space", 400);
+		padding-inline-end: get-token("space", 300);
 	}
 }
 
@@ -85,7 +85,7 @@ Table of Contents
 
 	// Adjust icon vertical alignment when both icon and label are present
 	.btn:has(.btn__icon):has(.btn__label) & {
-		margin-block-start: calc(get-token("space", 2) * -1);
+		margin-block-start: calc(get-token("space", 025) * -1);
 	}
 }
 
