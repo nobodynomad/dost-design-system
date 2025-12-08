@@ -1,6 +1,6 @@
 services:
   wp:
-    image: wordpress:6.8-php8.2-apache
+    image: wordpress:${WP_VERSION}-php${PHP_VERSION}-apache
     container_name: ${PROJECT_NAME}_wp
     depends_on:
       - db
@@ -25,12 +25,23 @@ services:
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DEBUG: ${WP_DEBUG}
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_CACHE', false);
+        define('WP_DEBUG_DISPLAY', ${WP_DEBUG_DISPLAY:-true});
+
+        /* Security */
+        define('DISALLOW_FILE_EDIT', ${DISALLOW_FILE_EDIT:-false});
+        define('AUTOMATIC_UPDATER_DISABLED', ${AUTOMATIC_UPDATER_DISABLED:-false});
+
+        /* Performance */
+        define('WP_CACHE', ${WP_CACHE:-false});
+        define('COMPRESS_CSS', ${WP_COMPRESS_CSS:-false});
+        define('COMPRESS_SCRIPTS', ${WP_COMPRESS_SCRIPTS:-false});
+        define('CONCATENATE_SCRIPTS', false);
+        define('ENFORCE_GZIP', ${WP_ENFORCE_GZIP:-false});
     networks:
       - wp-network
 
   wpcli:
-    image: wordpress:cli-php8.2
+    image: wordpress:cli-php${PHP_VERSION}
     container_name: ${PROJECT_NAME}_wpcli
     entrypoint: wp
     depends_on:
@@ -53,7 +64,7 @@ services:
       - wp-network
 
   db:
-    image: mariadb:10.11
+    image: mariadb:${MDB_VERSION}
     container_name: ${PROJECT_NAME}_db
     restart: unless-stopped
     environment:
@@ -67,7 +78,7 @@ services:
       - wp-network
 
   pma:
-    image: phpmyadmin:5.2
+    image: phpmyadmin:${PMA_VERSION}
     container_name: ${PROJECT_NAME}_pma
     depends_on:
       - db

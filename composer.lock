@@ -154,15 +154,15 @@
         },
         {
             "name": "wpackagist-plugin/acf-extended",
-            "version": "0.9.2",
+            "version": "0.9.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/acf-extended/",
-                "reference": "tags/0.9.2"
+                "reference": "tags/0.9.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/acf-extended.0.9.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/acf-extended.0.9.2.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -190,15 +190,15 @@
         },
         {
             "name": "wpackagist-plugin/cyr2lat",
-            "version": "6.5.0",
+            "version": "6.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cyr2lat/",
-                "reference": "tags/6.5.0"
+                "reference": "tags/6.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cyr2lat.6.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/cyr2lat.6.6.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -226,10 +226,10 @@
         },
         {
             "name": "wpengine/advanced-custom-fields-pro",
-            "version": "6.6.2",
+            "version": "6.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=pro&t=6.6.2"
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=pro&t=6.7.0"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
