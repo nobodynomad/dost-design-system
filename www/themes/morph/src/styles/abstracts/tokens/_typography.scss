@@ -1,71 +1,41 @@
-////
-/// Typography Token Definitions
-///
-/// This file defines the complete typography system for the design system,
-/// including font families, size scales, weights, and line heights. These
-/// tokens provide a consistent typographic foundation across all components
-/// and should be accessed via the get-token() function.
-///
-/// @group Tokens
-/// @since 0.0.1
-////
+@use "sass:map";
 
-/* ======================================================
-Table of Contents
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-	1.0 FONT FAMILIES
-	2.0 FONT SIZES
-	3.0 FONT WEIGHTS
-	4.0 LINE HEIGHTS
-====================================================== */
+$font-base: "Bounded", sans-serif;
+$font-heading: $font-base;
+$font-code: monospace;
+$font-family: ("base": $font-base, "heading": $font-heading, "code": $font-code);
 
-/* ======================================================
-  1.0 FONT FAMILIES
-====================================================== */
-$font-base: "Inter", sans-serif;
-$font-heading: "Inter", sans-serif;
-$font-code: "JetBrains Mono", monospace;
+$type-tablet-breakpoint: 75rem;
+$type-mobile-breakpoint: 47.5rem;
 
-// Map
-$font-family: (
-	"base": $font-base,
-	"heading": $font-heading,
-	"code": $font-code,
+// Bounded's Light body is an explicit brand choice; labels remain Regular.
+// Add or change a role here, never introduce a page-specific size.
+$type-styles: (
+    "display": ("size": 3rem, "tablet-size": 2.5rem, "mobile-size": 1.75rem, "weight": 600, "leading": 1.15, "mobile-leading": 1.4, "tracking": -.02em),
+    "title": ("size": 2.5rem, "tablet-size": 2rem, "mobile-size": 1.5rem, "weight": 600, "leading": 1.2, "tracking": -.02em),
+    "heading": ("size": 1.5rem, "mobile-size": 1.25rem, "weight": 400, "leading": 1.4, "tracking": -.01em),
+    "metric": ("size": 1.5rem, "mobile-size": 1.25rem, "weight": 400, "leading": 1.3, "tracking": -.01em),
+    "body": ("size": 1rem, "weight": 300, "leading": 1.6, "tracking": 0em),
+    "body-small": ("size": .875rem, "weight": 300, "leading": 1.6, "tracking": 0em),
+    "label": ("size": .875rem, "weight": 400, "leading": 1.5, "tracking": 0em),
+    "caption": ("size": .8125rem, "weight": 400, "leading": 1.5, "tracking": 0em),
+    "control": ("size": 1rem, "weight": 400, "leading": 1.5, "tracking": 0em),
 );
 
-/* ======================================================
-  2.0 FONT SIZES
-====================================================== */
+@mixin text-style($role) {
+    @if not map.has-key($type-styles, $role) { @error "Unknown typography role: #{$role}"; }
+    font: var(--type-#{$role}-font);
+    letter-spacing: var(--type-#{$role}-tracking);
+}
+
+// Compatibility aliases for existing Morph components: the same shared scale.
 $font-size: (
-	"xs": 0.75rem,
-	"sm": 0.875rem,
-	"md": 1rem,
-	"lg": clamp(1.25rem, 1.1875rem + 0.3125vw, 1.5rem),
-	"xl": clamp(1.375rem, 1.2188rem + 0.7813vw, 2rem),
-	"2xl": clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem),
-	"3xl": clamp(1.75rem, 1.4375rem + 1.5625vw, 3rem),
-	"4xl": clamp(2rem, 1.5313rem + 2.3438vw, 3.875rem),
-	"5xl": clamp(2.25rem, 1.625rem + 3.125vw, 4.75rem),
-	"6xl": clamp(2.5rem, 1.7188rem + 3.9063vw, 5.625rem),
+    "xs": var(--type-caption-size),
+    "sm": var(--type-label-size),
+    "md": var(--type-body-size),
+    "lg": var(--type-heading-size),
+    "xl": var(--type-title-size),
+    "2xl": var(--type-display-size),
 );
-
-/* ======================================================
-  3.0 FONT WEIGHTS
-====================================================== */
-$font-weight: (
-	"light": 300,
-	"normal": 400,
-	"medium": 500,
-	"semibold": 600,
-	"bold": 700,
-);
-
-/* ======================================================
-  4.0 LINE HEIGHTS
-====================================================== */
-$leading: (
-	"none": 1,
-	"sm": 1.2,
-	"md": 1.5,
-	"lg": 1.6,
-);
+$font-weight: ("light": 300, "normal": 400, "medium": 400, "semibold": 600, "bold": 600);
+$leading: ("none": 1, "sm": 1.4, "md": 1.5, "lg": 1.6);

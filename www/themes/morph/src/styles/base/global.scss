@@ -1,4 +1,15 @@
 @use "../abstracts/functions/get-token" as *;
+@use "../abstracts/tokens/typography" as type;
+
+@each $name, $weight in ("Light": 300, "Regular": 400, "SemiBold": 600) {
+	@font-face {
+		font-family: "Bounded";
+		src: url("../fonts/Bounded-#{$name}.otf") format("opentype");
+		font-style: normal;
+		font-weight: $weight;
+		font-display: swap;
+	}
+}
 
 /* ======================================================
   1.0 LAYOUT
@@ -8,9 +19,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-block-size: 100vh;
-	font-family: get-token("font-family", "base");
-	font-weight: get-token("font-weight", "normal");
-	line-height: get-token("leading", "md");
+	@include type.text-style("body");
 	color: get-token("color", "foreground", "neutral", 1);
 	background-color: get-token("color", "background", "neutral", 1, "rest");
 
@@ -35,43 +44,32 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: get-token("font-family", "heading");
-	font-weight: get-token("font-weight", "bold");
-	line-height: get-token("leading", "sm");
 	color: get-token("color", "foreground", "neutral", 1);
 }
 
 h1 {
-	font-size: get-token("font-size", "2xl");
+	@include type.text-style("display");
 }
 
 h2 {
-	font-size: get-token("font-size", "xl");
+	@include type.text-style("title");
 }
 
 h3 {
-	font-size: get-token("font-size", "lg");
+	@include type.text-style("heading");
 }
 
-h4 {
-	font-size: get-token("font-size", "md");
-}
-
-h5 {
-	font-size: get-token("font-size", "sm");
-	text-transform: uppercase;
-}
-
+h4,
+h5,
 h6 {
-	font-size: get-token("font-size", "xs");
-	text-transform: uppercase;
+	@include type.text-style("control");
 }
 
 /* 2.2 INLINE TEXT
 /––––––––––––––––––––––––------------ */
 strong,
 b {
-	font-weight: get-token("font-weight", "bold");
+	font-weight: get-token("font-weight", "normal");
 	color: get-token("color", "foreground", "neutral", 1);
 }
 
@@ -98,8 +96,8 @@ ol {
 /––––––––––––––––––––––––------------ */
 code {
 	padding: get-token("space", 025) get-token("space", 050);
+	@include type.text-style("label");
 	font-family: get-token("font-family", "code");
-	font-size: get-token("font-size", "sm");
 	color: var(--color-text-code);
 	background-color: get-token("color", "background", "neutral", 2, "rest");
 	border-radius: get-token("border-radius", "sm");
@@ -108,13 +106,14 @@ code {
 pre {
 	padding: get-token("space", 300);
 	overflow-x: auto;
-	line-height: get-token("leading", "md");
+	@include type.text-style("label");
+	font-family: get-token("font-family", "code");
 	background-color: get-token("color", "background", "neutral", 2, "rest");
 	border-radius: get-token("border-radius", "md");
 
 	code {
 		padding: 0;
-		font-size: get-token("font-size", "sm");
+		font: inherit;
 		background: none;
 	}
 }
@@ -128,7 +127,7 @@ figure {
 
 	figcaption {
 		margin-block-start: get-token("space", 100);
-		font-size: get-token("font-size", "sm");
+		@include type.text-style("caption");
 		font-style: italic;
 		color: get-token("color", "foreground", "neutral", 2);
 		text-align: center;

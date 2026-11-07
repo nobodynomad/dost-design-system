@@ -25,73 +25,64 @@ Table of Contents
 /* ======================================================
   1.0 BASE COLORS
 ====================================================== */
+$dost-night: #252525;
+$dost-night-deep: #171717;
+$dost-green: #00362d;
+$dost-green-deep: #001b16;
+$dost-white: #ffffff;
+$dost-gray: #c4c4c4;
+$dost-red: #630d0d;
+$dost-red-deep: #4e0000;
+
+// Lighter steps are UI tints derived from the brand colors.
+$green-scale: (
+	0: color.mix($dost-green, $dost-white, 5%),
+	1: color.mix($dost-green, $dost-white, 10%),
+	2: color.mix($dost-green, $dost-white, 25%),
+	3: color.mix($dost-green, $dost-white, 50%),
+	4: color.mix($dost-green, $dost-white, 75%),
+	5: $dost-green,
+	6: $dost-green-deep,
+	7: $dost-green-deep,
+	8: $dost-green-deep,
+	9: $dost-green-deep,
+);
+$red-scale: (
+	0: color.mix($dost-red, $dost-white, 5%),
+	1: color.mix($dost-red, $dost-white, 10%),
+	2: color.mix($dost-red, $dost-white, 25%),
+	3: color.mix($dost-red, $dost-white, 50%),
+	4: color.mix($dost-red, $dost-white, 75%),
+	5: $dost-red,
+	6: $dost-red-deep,
+	7: $dost-red-deep,
+	8: $dost-red-deep,
+	9: $dost-red-deep,
+);
+
 $theme-default-base-colors: (
 	"neutral": (
-		"white": #ffffff,
-		"black": #1f2328,
-		0: #ffffff,
-		1: #f6f8fa,
-		2: #eff2f5,
-		3: #e6eaef,
-		4: #e0e6eb,
-		5: #dae0e7,
-		6: #d1d9e0,
-		7: #c8d1da,
-		8: #818b98,
-		9: #59636e,
-		10: #454c54,
-		11: #393f46,
-		12: #25292e,
-		13: #1f2328,
+		"white": $dost-white,
+		"black": $dost-night-deep,
+		0: $dost-white,
+		1: color.mix($dost-gray, $dost-white, 15%),
+		2: color.mix($dost-gray, $dost-white, 30%),
+		3: color.mix($dost-gray, $dost-white, 45%),
+		4: color.mix($dost-gray, $dost-white, 60%),
+		5: color.mix($dost-gray, $dost-white, 80%),
+		6: $dost-gray,
+		7: color.mix($dost-gray, $dost-white, 85%),
+		8: color.mix($dost-night, $dost-white, 70%),
+		9: color.mix($dost-night, $dost-white, 80%),
+		10: color.mix($dost-night, $dost-white, 85%),
+		11: color.mix($dost-night, $dost-white, 90%),
+		12: $dost-night,
+		13: $dost-night-deep,
 	),
-	"accent": (
-		0: #ddf4ff,
-		1: #b6e3ff,
-		2: #80ccff,
-		3: #54aeff,
-		4: #218bff,
-		5: #0969da,
-		6: #0550ae,
-		7: #033d8b,
-		8: #0a3069,
-		9: #002155,
-	),
-	"success": (
-		0: #dafbe1,
-		1: #aceebb,
-		2: #6fdd8b,
-		3: #4ac26b,
-		4: #2da44e,
-		5: #1a7f37,
-		6: #116329,
-		7: #044f1e,
-		8: #003d16,
-		9: #002d11,
-	),
-	"attention": (
-		0: #fff8c5,
-		1: #fae17d,
-		2: #eac54f,
-		3: #d4a72c,
-		4: #bf8700,
-		5: #9a6700,
-		6: #7d4e00,
-		7: #633c01,
-		8: #4d2d00,
-		9: #3b2300,
-	),
-	"danger": (
-		0: #ffebe9,
-		1: #ffcecb,
-		2: #ffaba8,
-		3: #ff8182,
-		4: #fa4549,
-		5: #cf222e,
-		6: #a40e26,
-		7: #82071e,
-		8: #660018,
-		9: #4c0014,
-	),
+	"accent": $green-scale,
+	"success": $green-scale,
+	"attention": $red-scale,
+	"danger": $red-scale,
 );
 
 /* ======================================================

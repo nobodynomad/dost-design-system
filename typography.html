@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru" data-theme="default">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Типографика DOST — единая шкала</title>
+  <meta name="description" content="Единая шкала Bounded для всех страниц DOST: размеры, начертания, интервалы и адаптивные стили.">
+  <link rel="stylesheet" href="www/themes/morph/assets/styles/main.css?v=3">
+  <link rel="stylesheet" href="typography.css?v=6">
+  <script type="module" src="typography.mjs?v=1"></script>
+</head>
+<body>
+  <header class="type-header">
+    <div class="type-wrap type-header__inner">
+      <a class="type-logo" href="dost-model.html" aria-label="DOST — страница автомобиля"><img src="www/themes/morph/src/images/brand/dost-logo-dark.svg" alt="" width="144" height="17"></a>
+      <nav class="type-nav" aria-label="Страницы проекта">
+        <a href="dost-model.html">Страница автомобиля</a>
+        <a href="design-system.html">Дизайн-система</a>
+        <a href="#scale">Шкала стилей</a>
+      </nav>
+    </div>
+  </header>
+  <main class="type-wrap">
+    <div class="type-intro">
+      <p class="type-eyebrow">DOST / Справочник стилей</p>
+      <h1>Одна шкала для всего сайта</h1>
+      <p>Девять стилей Bounded для текущей страницы и новых разделов сайта. Каждый стиль объединяет размер, начертание, межстрочный и межбуквенный интервалы. Размеры ниже указаны в&nbsp;px и берутся из общих стилей проекта.</p>
+    </div>
+    <section class="type-weights" aria-label="Начертания Bounded">
+      <div class="type-weight type-weight--light"><p class="type-weight__name">Light 300</p><p class="type-weight__use">Основной текст и значения в таблицах. Сохраняем Light с учётом плотного рисунка Bounded.</p></div>
+      <div class="type-weight type-weight--regular"><p class="type-weight__name">Regular 400</p><p class="type-weight__use">Подзаголовки, параметры, подписи и элементы интерфейса.</p></div>
+      <div class="type-weight type-weight--semibold"><p class="type-weight__name">Semibold 600</p><p class="type-weight__use">Только заголовок страницы и крупные названия разделов.</p></div>
+    </section>
+    <div class="type-toolbar">
+      <p class="type-toolbar__label">Размер образцов</p>
+      <fieldset class="type-viewport">
+        <legend class="sr-only">Выберите размер экрана для образцов текста</legend>
+        <label><input class="sr-only" id="view-desktop" type="radio" name="viewport" value="desktop" checked><span>Десктоп</span></label>
+        <label><input class="sr-only" id="view-tablet" type="radio" name="viewport" value="tablet"><span>Планшет</span></label>
+        <label><input class="sr-only" id="view-mobile" type="radio" name="viewport" value="mobile"><span>Телефон</span></label>
+      </fieldset>
+    </div>
+    <section class="type-section" id="scale" aria-labelledby="scale-heading">
+      <h2 id="scale-heading">Шкала стилей</h2>
+      <p class="type-section__intro">Десктоп — шире 1200&nbsp;px, планшет — от 761 до 1200&nbsp;px, телефон — до 760&nbsp;px. Заголовки меняются по ступеням. Размеры текста, подписей и полей остаются стабильными.</p>
+      <div class="type-columns" aria-hidden="true"><span>Стиль и применение</span><span>Образец текста</span><span>Размер шрифта, px</span></div>
+        <article class="type-row" data-type-role="display" id="type-display">
+          <div class="type-role"><h3>Заголовок страницы</h3><p>Первый экран, один главный заголовок</p><p class="type-token">text-display</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-display">Модель DOST</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="title" id="type-title">
+          <div class="type-role"><h3>Название раздела</h3><p>Крупные блоки страницы</p><p class="type-token">text-title</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-title">Кабина и комфорт</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="heading" id="type-heading">
+          <div class="type-role"><h3>Подзаголовок</h3><p>Названия карточек и конфигураций</p><p class="type-token">text-heading</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-heading">Современная приборная панель</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="metric" id="type-metric">
+          <div class="type-role"><h3>Крупный параметр</h3><p>Значения характеристик и размеры</p><p class="type-token">text-metric</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-metric">до 1 045 кг</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="body" id="type-body">
+          <div class="type-role"><h3>Основной текст</h3><p>Описания и абзацы</p><p class="type-token">text-body</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-body">Скорость, уровень топлива и контрольные индикаторы собраны перед водителем, чтобы следить за режимом движения и состоянием автомобиля.</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="body-small" id="type-body-small">
+          <div class="type-role"><h3>Текст в таблицах</h3><p>Значения в строках характеристик</p><p class="type-token">text-body-small</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-body-small">6 207–6 230 × 2 068 × 2 376–2 735 мм</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="label" id="type-label">
+          <div class="type-role"><h3>Подпись и интерфейс</h3><p>Метки, меню, кнопки, табы, заголовки таблиц</p><p class="type-token">text-label</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-label">Параметр · Значение</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="caption" id="type-caption">
+          <div class="type-role"><h3>Мелкая подпись</h3><p>Подписи к параметрам и схеме, вспомогательные сведения</p><p class="type-token">text-caption</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-caption">Грузоподъёмность</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+        <article class="type-row" data-type-role="control" id="type-control">
+          <div class="type-role"><h3>Текст поля ввода</h3><p>Ввод, выбор, текстовые поля и небольшие заголовки форм</p><p class="type-token">text-control</p></div>
+          <div class="type-preview" data-type-viewport="desktop"><p class="type-sample text-control">Поиск по сайту</p></div>
+          <div class="type-metrics"><dl class="type-sizes"><div class="type-size--desktop"><dt>Десктоп</dt><dd data-size="desktop">—</dd></div><div class="type-size--tablet"><dt>Планшет</dt><dd data-size="tablet">—</dd></div><div class="type-size--mobile"><dt>Телефон</dt><dd data-size="mobile">—</dd></div></dl><p class="type-reading" data-reading>Значения загружаются из общей шкалы.</p></div>
+        </article>
+    </section>
+    <details class="type-notes">
+      <summary>Как использовать шкалу на новых страницах <svg class="icon icon--md" aria-hidden="true" focusable="false"><use href="www/themes/morph/assets/images/sprite.svg?v=2#icon-chevron-down-regular"></use></svg></summary>
+      <p>Используйте готовые стили по назначению: <code>text-display</code> для главного заголовка, <code>text-title</code> для разделов, <code>text-heading</code> для подзаголовков. Для остального текста выберите подходящую роль из таблицы.</p>
+      <p>В обычной разметке <code>h1</code>, <code>h2</code>, <code>h3</code> и основной текст уже получают эти стили. Кнопки, табы, таблицы и поля ввода используют ту же шкалу.</p>
+      <p>Источник — <code>www/themes/morph/src/styles/abstracts/tokens/_typography.scss</code>. Меняйте стиль там и пересобирайте тему: все страницы и этот справочник обновятся вместе. Не добавляйте отдельные размеры и начертания в стили страниц.</p>
+    </details>
+    <noscript><p class="type-section__intro">Для числовых значений и переключения образцов включите JavaScript. Сами образцы используют общие стили проекта.</p></noscript>
+  </main>
+  <footer class="type-wrap type-footer"><span>DOST / Bounded</span><a href="dost-model.html">Открыть страницу автомобиля <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="www/themes/morph/assets/images/sprite.svg?v=2#icon-arrow-right-regular"></use></svg></a></footer>
+</body>
+</html>

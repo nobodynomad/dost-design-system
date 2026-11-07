@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../abstracts/tokens/typography" as type;
+
+@mixin viewport-styles($viewport) {
+    @each $role, $style in type.$type-styles {
+        --type-#{$role}-size: var(--type-#{$role}-size-#{$viewport});
+        --type-#{$role}-leading: var(--type-#{$role}-leading-#{$viewport});
+        --type-#{$role}-font: var(--type-#{$role}-weight) var(--type-#{$role}-size) / var(--type-#{$role}-leading) #{type.$font-base};
+    }
+}
+
+:root {
+    @each $role, $style in type.$type-styles {
+        @each $viewport in desktop, tablet, mobile {
+            $size: map.get($style, "#{$viewport}-size");
+            $leading: map.get($style, "#{$viewport}-leading");
+            @if $size == null { $size: map.get($style, "size"); }
+            @if $leading == null { $leading: map.get($style, "leading"); }
+            --type-#{$role}-size-#{$viewport}: #{$size};
+            --type-#{$role}-leading-#{$viewport}: #{$leading};
+        }
+        --type-#{$role}-weight: #{map.get($style, "weight")};
+        --type-#{$role}-tracking: #{map.get($style, "tracking")};
+    }
+    @include viewport-styles(desktop);
+}
+
+@media (max-width: type.$type-tablet-breakpoint) {
+    :root { @include viewport-styles(tablet); }
+}
+@media (max-width: type.$type-mobile-breakpoint) {
+    :root { @include viewport-styles(mobile); }
+}
+
+// The reference preview uses the same values as the live breakpoints.
+@each $viewport in desktop, tablet, mobile {
+    [data-type-viewport="#{$viewport}"] { @include viewport-styles($viewport); }
+}
+@each $role, $style in type.$type-styles {
+    .text-#{$role} { @include type.text-style($role); }
+}
+.text-numeric { font-variant-numeric: tabular-nums; }

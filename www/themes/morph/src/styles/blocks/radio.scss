@@ -1,3 +1,4 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 @use "../abstracts/mixins/focus-visible" as *;
 @use "../abstracts/mixins/transition" as *;
@@ -94,8 +95,7 @@
 	padding-block: get-token("space", 100);
 	padding-inline-start: get-token("space", 050);
 	padding-inline-end: get-token("space", 075);
-	font-size: get-token("font-size", "md");
-	line-height: get-token("leading", "none");
+	@include type.text-style("control");
 	color: get-token("color", "foreground", "neutral", 1);
 	cursor: pointer;
 

@@ -1,4 +1,20 @@
-# MORPH — WordPress Starter Theme
+# DOST — страница фургона и дизайн-система
+
+[Скачать страницу одним HTML-файлом](https://github.com/nobodynomad/dost-design-system/releases/latest/download/dost-model-standalone.html). Откройте скачанный файл в браузере. Фотографии, шрифты, меню и вкладки работают без интернета. В автономной копии заявки на звонок не отправляются.
+
+Для просмотра полной версии с приёмом заявок запустите проект на своём компьютере.
+
+```sh
+git clone https://github.com/nobodynomad/dost-design-system.git
+cd dost-design-system
+python3 scripts/preview.py
+```
+
+Откройте [страницу фургона](http://127.0.0.1:4173/dost-model.html), [дизайн-систему](http://127.0.0.1:4173/design-system.html) или [шкалу типографики](http://127.0.0.1:4173/typography.html). Заявки сохраняются в локальной базе на компьютере, где запущен сервер. Команда `python3 scripts/export_model.py` обновляет автономный HTML после правок.
+
+Проект основан на [MORPH WordPress Starter Theme](https://github.com/arthursatarov/morph-wp-starter-theme). Инструкции для разработки темы приведены ниже.
+
+## MORPH — WordPress Starter Theme
 
 A Docker-based local development environment for WordPress with Composer dependency management.
 
@@ -166,6 +182,28 @@ composer update
 ## Morph Theme
 
 The project includes the **Morph** starter theme - a comprehensive design system and component library built with modern web standards.
+
+### DOST design system
+
+From the repository root, run `python3 scripts/preview.py` and open `http://127.0.0.1:4173/design-system.html` to view the DOST brand and Morph components without WordPress. The DOST color tokens, Bounded fonts, logos, and patterns are also available in `www/themes/morph/src` for use in the theme.
+
+All pages and components use the local Microsoft Fluent icon set from [Fluenticons](https://github.com/coltongriffith/fluenticons). The 100 selected SVGs, pinned source version, license and rules for adding icons are in `www/themes/morph/src/images/icons`. Use the existing `.icon` component and shared `assets/images/sprite.svg`; the gallery is at `design-system.html#icons`. Regular is the default, with Filled for feedback states. The icons load locally without a CDN dependency.
+
+Open `dost-model.html` to preview the vehicle model page. The brochure button demonstrates the pressed state. Vehicle imagery and specifications in this prototype are for design review. Cabin height is an estimate.
+
+The local model preview accepts callback requests at `POST /api/callback`. To review submitted names and phone numbers on the Mac, run `sqlite3 -header -column ~/.local/share/dost-model/callbacks.sqlite3 'SELECT received_at, name, phone FROM callbacks ORDER BY id DESC'`. The database is outside the web directory.
+
+Open `typography.html` for the shared typography scale. Its examples and measurements read the same styles as the model page and component guide; there is no separate page-specific scale or manually maintained size snapshot.
+
+For every new DOST page, load `www/themes/morph/assets/styles/main.css` and use the existing semantic styles. `h1`, `h2`, `h3`, and body text already map to `display`, `title`, `heading`, and `body`. The reusable classes are `text-display`, `text-title`, `text-heading`, `text-metric`, `text-body`, `text-body-small`, `text-label`, `text-caption`, and `text-control`. Use `text-numeric` for numeric values. Existing Morph buttons, tabs, tables, and form controls use these same roles.
+
+The only source of typography values is `www/themes/morph/src/styles/abstracts/tokens/_typography.scss`. Each role pairs size, weight, unitless line-height, and tracking. Change a role there and rebuild; do not introduce independent font sizes or weights in page styles. Legacy `font-size` tokens are compatibility aliases to this scale.
+
+Bounded intentionally uses Light (300) for body copy and table values because of its dense letterforms; this is an explicit user-approved exception to the general small-text weight recommendation. Regular (400) is used for labels, controls, metrics, and internal headings. Semibold (600) is reserved for the page title and section titles. Desktop, tablet, and mobile typography breakpoints are 1200px and 760px at the default browser font size; sizes are stored in rem and stop growing on large screens.
+
+The page body and eight images in `model-assets/vehicle/` were adapted from the local `volvodsDOST` project. It uses the current Morph/DOST styles, buttons and tabs; the existing header and footer remain in place. Content is capped at 1440px, while the hero background spans the viewport.
+
+After changing theme assets, run `npm run build` and `npm test` in `www/themes/morph`. All three HTML pages load the built theme stylesheet directly. Embedded logo and pattern previews in `design-system.html` still need updating if the brand artwork changes.
 
 ### Current Status
 

@@ -7,6 +7,14 @@ Thumbs.db
 *.tmp
 .idea/
 .vscode/
+__pycache__/
+
+# Local settings, callback requests and private design review notes
+.env
+.env.*
+!.env.example
+*.sqlite3*
+/design-qa.md
 
 # ========================================
 # WordPress
@@ -22,7 +30,6 @@ www/themes/*
 # ========================================
 # Theme
 # ========================================
-www/themes/morph/assets/
 www/themes/morph/node_modules/
 
 # ========================================

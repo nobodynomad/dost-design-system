@@ -17,6 +17,14 @@
 // Generate CSS custom properties for the default theme
 // Output format: --clr-{category}-{variant}: {value}
 [data-theme="default"] {
+	--dost-night: #{$dost-night};
+	--dost-night-deep: #{$dost-night-deep};
+	--dost-green: #{$dost-green};
+	--dost-green-deep: #{$dost-green-deep};
+	--dost-white: #{$dost-white};
+	--dost-gray: #{$dost-gray};
+	--dost-red: #{$dost-red};
+	--dost-red-deep: #{$dost-red-deep};
 	@include generate-css-variables($theme-default-colors, "clr");
 	@include generate-css-variables($theme-default-shadows, "shadow");
 }

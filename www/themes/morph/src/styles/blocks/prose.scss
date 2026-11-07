@@ -1,12 +1,11 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 
 .prose {
 	--prose-space: 1.5em;
 
 	max-inline-size: get-token("max-width", "prose");
-	font-family: get-token("font-family", "base");
-	font-size: get-token("font-size", "md");
-	line-height: get-token("leading", "lg");
+	@include type.text-style("body");
 	color: get-token("color", "foreground", "neutral", 1);
 
 	> * + * {

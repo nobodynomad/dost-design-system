@@ -1,3 +1,4 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 @use "../abstracts/mixins/focus-visible" as *;
 @use "../abstracts/mixins/transition" as *;
@@ -48,8 +49,7 @@
 /––––––––––––––––––––––––------------ */
 .input-text__input {
 	inline-size: 100%;
-	font-size: get-token("font-size", "sm");
-	line-height: get-token("leading", "none");
+	@include type.text-style("control");
 	background-color: transparent;
 	border: 0;
 

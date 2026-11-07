@@ -1,3 +1,4 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 @use "../abstracts/mixins/transition" as *;
 
@@ -20,8 +21,7 @@ table:not([class]),
 /* 1.2 TABLE HEADING & DATA
 /––––––––––––––––––––––––------------ */
 th {
-	font-size: get-token("font-size", "md");
-	font-weight: get-token("font-weight", "medium");
+	@include type.text-style("label");
 	background-color: get-token("color", "background", "neutral", 2, "rest");
 }
 
@@ -54,4 +54,9 @@ tbody {
 			border-block-end: 0;
 		}
 	}
+}
+
+td {
+	@include type.text-style("body-small");
+	font-variant-numeric: tabular-nums;
 }

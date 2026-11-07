@@ -9,6 +9,7 @@
 	--icon-color: currentColor;
 
 	display: block;
+	flex-shrink: 0;
 	inline-size: var(--icon-size, 1em);
 	block-size: var(--icon-size, 1em);
 	line-height: get-token("leading", "none");

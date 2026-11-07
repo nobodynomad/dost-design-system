@@ -1,3 +1,4 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 @use "../abstracts/mixins/focus-visible" as *;
 @use "../abstracts/mixins/transition" as *;
@@ -42,9 +43,7 @@ Table of Contents
 	inline-size: var(--tabs-trigger-inline-size);
 	block-size: var(--tabs-trigger-block-size);
 	padding-inline: get-token("space", 200);
-	font-size: get-token("font-size", "md");
-	font-weight: get-token("font-weight", "normal");
-	line-height: get-token("leading", "none");
+	@include type.text-style("label");
 	color: var(--tabs-trigger-fg-color);
 	text-decoration: none;
 	cursor: pointer;
@@ -98,7 +97,7 @@ Table of Contents
 /* 1.5 TABS TRIGGER LABEL
 /––––––––––––––––––––––––------------ */
 .tabs__trigger-label {
-	font-weight: get-token("font-weight", "medium");
+	font-weight: inherit;
 }
 
 /* 1.6 TABS PANELS

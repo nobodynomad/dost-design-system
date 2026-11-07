@@ -1,3 +1,4 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 @use "../abstracts/mixins/focus-visible" as *;
 @use "../abstracts/mixins/transition" as *;
@@ -9,6 +10,7 @@
 /* 1.1 WRAPPER
 /––––––––––––––––––––––––------------ */
 .textarea {
+	@include type.text-style("control");
 	padding: get-token("space", 100);
 	cursor: text;
 	background-color: get-token("color", "background", "neutral", 1, "rest");

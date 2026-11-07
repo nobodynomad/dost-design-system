@@ -63,8 +63,8 @@ const paths = {
 	src: {
 		styles: path.join(srcDir, 'styles/*.scss'),
 		scripts: path.join(srcDir, 'scripts/*.js'),
-		fonts: path.join(srcDir, 'fonts/**/*.{woff,woff2}'),
-		images: path.join(srcDir, 'images/**/*.{jpg,png,gif,webp}'),
+		fonts: path.join(srcDir, 'fonts/**/*.{woff,woff2,otf,txt}'),
+		images: [path.join(srcDir, 'images/**/*.{jpg,png,gif,webp}'), path.join(srcDir, 'images/brand/**/*.svg'), path.join(srcDir, 'images/icons/LICENSE')],
 		icons: path.join(srcDir, 'images/icons/**/*.svg'),
 	},
 	build: {
@@ -77,8 +77,8 @@ const paths = {
 		php: '**/*.php',
 		styles: path.join(srcDir, 'styles/**/*.scss'),
 		scripts: path.join(srcDir, 'scripts/**/*.js'),
-		images: path.join(srcDir, 'images/**/*.{jpg,png,gif,webp}'),
-		fonts: path.join(srcDir, 'fonts/**/*.{woff,woff2}'),
+		images: [path.join(srcDir, 'images/**/*.{jpg,png,gif,webp}'), path.join(srcDir, 'images/brand/**/*.svg'), path.join(srcDir, 'images/icons/LICENSE')],
+		fonts: path.join(srcDir, 'fonts/**/*.{woff,woff2,otf,txt}'),
 		icons: path.join(srcDir, 'images/icons/**/*.svg'),
 	},
 };
@@ -175,7 +175,7 @@ function styles() {
 /* 2.3. FONTS
 /––––––––––––––––––––––––*/
 function copyFonts() {
-	return src(paths.src.fonts)
+	return src(paths.src.fonts, { encoding: false })
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(newer(paths.build.fonts))
 		.pipe(dest(paths.build.fonts))

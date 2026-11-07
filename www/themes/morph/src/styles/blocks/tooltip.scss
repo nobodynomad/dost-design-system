@@ -1,3 +1,4 @@
+@use "../abstracts/tokens/typography" as type;
 @use "../abstracts/functions/get-token" as *;
 @use "../abstracts/mixins/transition" as *;
 
@@ -7,7 +8,7 @@
 	visibility: hidden;
 	padding-block: get-token("space", 050);
 	padding-inline: get-token("space", 100);
-	font-size: get-token("font-size", "sm");
+	@include type.text-style("caption");
 	color: get-token("color", "foreground", "on-emphasis");
 	background-color: get-token("color", "background", "inverted");
 	border-radius: get-token("border-radius", "sm");
